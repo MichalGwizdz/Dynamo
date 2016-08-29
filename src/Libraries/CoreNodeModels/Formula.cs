@@ -47,7 +47,15 @@ namespace CoreNodeModels
                 }
             }
         }
-
+        public string FormattedFormulaString
+        {
+            get
+            {
+                var formula = FormulaString;
+                //formula = formula.Replace("/", " \\over ");
+                return "$$" + formula + "$$";
+            }
+        }
         public Formula()
         {
             ArgumentLacing = LacingStrategy.Auto;
